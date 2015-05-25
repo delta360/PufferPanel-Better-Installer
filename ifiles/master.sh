@@ -8,7 +8,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 usedev=false
 installpath=$(mktemp -d)
 finalpath="/var/www/pufferpanel"
-webuser="apache"
+webuser="www-data"
 test=false
 skiplang=false
 
