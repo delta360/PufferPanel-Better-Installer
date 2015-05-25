@@ -10,7 +10,7 @@ echo "Checking for dependencies..."
 echo "" >> /etc/apt/sources.list
 echo "deb http://packages.dotdeb.org wheezy-php55 all" >> /etc/apt/sources.list
 echo "deb-src http://packages.dotdeb.org wheezy-php55 all" >> /etc/apt/sources.list
-wget https://raw.githubusercontent.com/delta360/PufferPanel-Better-Installer/master/ifiles/dotdeb.gpg -O dotdeb.gpg >/dev/null 2>/dev/null
+wget http://www.dotdeb.org/dotdeb.gpg -O dotdeb.gpg >/dev/null 2>/dev/null
 apt-key add dotdeb.gpg > /dev/null
 rm -rf dotdeb.gpg 
 apt-get update > /dev/null
