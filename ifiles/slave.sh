@@ -1,10 +1,10 @@
 #!/bin/bash
 echo "Installing Scales..."
-curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash - > /dev/null
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash - >/dev/null 2>/dev/null
 echo "Installing dependencies..."
-apt-get install -y openssl curl git make gcc g++ nodejs > /dev/null
+apt-get install -y openssl curl git make gcc g++ nodejs >/dev/null 2>/dev/null
 echo "Editing config files..."
-addgroup --system scalesuser > /dev/null
+addgroup --system scalesuser >/dev/null 2>/dev/null
 echo "" >> /etc/ssh/sshd_config
 echo "Match group scalesuser" >> /etc/ssh/sshd_config
 echo "    ChrootDirectory %h" >> /etc/ssh/sshd_config
@@ -13,9 +13,9 @@ echo "    AllowTcpForwarding no" >> /etc/ssh/sshd_config
 echo "    ForceCommand internal-sftp" >> /etc/ssh/sshd_config
 cd /srv
 echo "Cloning newest Scales..."
-git clone https://github.com/PufferPanel/Scales scales > /dev/null
-cd scales && git checkout tags/$(git describe --abbrev=0 --tags) > /dev/null
-npm install > /dev/null
+git clone https://github.com/PufferPanel/Scales scales >/dev/null 2>/dev/null
+cd scales && git checkout tags/$(git describe --abbrev=0 --tags) >/dev/null 2>/dev/null
+npm install >/dev/null 2>/dev/null
 echo "Cloned and installed."
 echo ""
 echo "Generating self-signed certificate (enter your domain FQDN)..."
