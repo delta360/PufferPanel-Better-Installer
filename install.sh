@@ -5,9 +5,8 @@ echo "Checking for dependencies...";
 echo "" >> /etc/apt/sources.list
 echo "deb http://packages.dotdeb.org wheezy-php55 all" >> /etc/apt/sources.list
 echo "deb-src http://packages.dotdeb.org wheezy-php55 all" >> /etc/apt/sources.list
-wget http://www.dotdeb.org/dotdeb.gpg
-apt-key add dotdeb.gpg
-rm -rf dotdeb.gpg
+gpg --keyserver packages.dotdeb.org --recv-key  E9C74FEEA2098A6E
+gpg -a --export E9C74FEEA2098A6E | sudo apt-key add -
 apt-get update
 echo "Installing dependencies...";
 apt-get install -y openssl curl apache2 git mysql-client mysql-server php5 php5-cli php5-curl php5-mysql php5-mcrypt wget
