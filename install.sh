@@ -34,7 +34,7 @@ do
         "Slave (Scales)")
             echo "Runnning installer for Slave..."
             apt-get install -y lib32gcc1 htop screen openjdk-7-jre > /dev/null
-			wget https://raw.githubusercontent.com/delta360/PufferPanel-Better-Installer/master/ifiles/slave.sh -O slave.sh >/dev/null 2>/dev/null
+	    wget https://raw.githubusercontent.com/delta360/PufferPanel-Better-Installer/master/ifiles/slave.sh -O slave.sh >/dev/null 2>/dev/null
             chmod 755 /tmp/slave.sh
             /tmp/slave.sh
             ;;
