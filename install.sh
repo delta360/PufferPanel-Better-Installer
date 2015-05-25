@@ -1,9 +1,11 @@
 #!/bin/bash
+dist=`grep DISTRIB_ID /etc/*-release | awk -F '=' '{print $2}'`
 RED='\033[0;31m'
 NC='\033[0m'
 printf "${RED}PufferPanel${NC} - Better Installer"
 
 if [[ `id -u` -ne 0 ]] ; then echo "This installer can only be run as root." ; exit 1 ; fi
+if [ !"$dist" == "Ubuntu" ] || [ !"$dist" == "Debian" ]; then echo "This installer can only be run on Debian or Ubuntu" exit 1 ; fi
 echo "Checking for dependencies..."
 echo "" >> /etc/apt/sources.list
 echo "deb http://packages.dotdeb.org wheezy-php55 all" >> /etc/apt/sources.list
@@ -50,5 +52,6 @@ do
             ;;
         *) echo Invalid option selected;;
     esac
+    exit 1
 done
 echo "Installation complete! If you require more help, please visit http://www.pufferpanel.com/v0.8.0/docs for more information."
