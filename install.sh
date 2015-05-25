@@ -48,7 +48,7 @@ do
             apt-get install -y lib32gcc1 htop screen openjdk-7-jre > /dev/null
             /tmp/slave.sh
             ;;
-        "Cancel")
+        "Cancel or Finish")
             break
             ;;
         *) echo Invalid option selected;;
