@@ -7,5 +7,4 @@ A better installer for the PufferPanel Game Server Manager, this installer will 
 
 To download and install:
 
-    cd /tmp/ && wget https://raw.githubusercontent.com/delta360/PufferPanel-Better-Installer/master/install.sh && chmod 755 install.sh && /tmp/install.sh
-    
+    cd /tmp/ && wget http://git.io/vTj5i -O install.sh && chmod 755 install.sh && /tmp/install.sh
