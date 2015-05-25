@@ -16,6 +16,7 @@ rm -rf dotdeb.gpg
 apt-get update > /dev/null
 echo "Installing dependencies...";
 apt-get install -y openssl curl apache2 git php5 php5-cli php5-curl php5-mysql php5-mcrypt wget >/dev/null 2>/dev/null
+echo "Installing MySQL..."
 apt-get install -y mysql-client mysql-server
 cd /tmp
 PS3='Which package would you like to install: '
